@@ -12,7 +12,7 @@ const defaultState = {
 	ball: {
 		position: {
 			x: 50,
-			y: 200
+			y: 50
 		},
 
 		velocity: {
@@ -34,7 +34,7 @@ const defaultState = {
 
 		velocity: {
 			x: 0,
-			y: 10
+			y: 20
 		},
 
 		size: {
