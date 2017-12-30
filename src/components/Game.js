@@ -3,6 +3,7 @@ import Ball from './Ball';
 import Player from './Player';
 import Opponent from './Opponent';
 import Score from './Score';
+import SpeedPicker from './SpeedPicker';
 
 const getDefaultState = () => {
 	let speed = 2;
@@ -258,6 +259,10 @@ export default class Game extends Component {
 		);
 	}
 
+	changeSpeed = (speed) => {
+		console.log(speed);
+	}
+
 	render() {
 		let {board, player, ball, opponent, score} = this.state;
 		score.width = board.width;
@@ -275,10 +280,11 @@ export default class Game extends Component {
 		return (
 			<div>
 				<Score score={score} />
-				<div style={ styles }>
+				<div style={ styles } id="board">
 					<Ball
 						ball={ball}
 					/>
+
 					<Player
 						player={player}
 						move={this.movePlayer}
@@ -286,8 +292,16 @@ export default class Game extends Component {
 						drag={this.onDragPlayer}
 						dragEnd={this.onPlayerDragEnd}
 					/>
-					<Opponent opponent={opponent} move={this.moveOpponent} />
+
+					<Opponent
+						opponent={opponent}
+						move={this.moveOpponent}
+					/>
 				</div>
+
+				<SpeedPicker
+					changeSpeed={this.changeSpeed}
+				/>
 			</div>
 		);
 	}

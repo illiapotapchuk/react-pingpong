@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 export default class Player extends Component {
 	componentDidMount() {
-		window.addEventListener('keydown', this.props.move);
-		window.addEventListener('mousemove', this.props.drag);
-		window.addEventListener('mousedown', this.props.dragStart);
-		window.addEventListener('mouseup', this.props.dragEnd);
+		document.getElementById("board").addEventListener('keydown', this.props.move);
+		document.getElementById("board").addEventListener('mousemove', this.props.drag);
+		document.getElementById("board").addEventListener('mousedown', this.props.dragStart);
+		document.getElementById("board").addEventListener('mouseup', this.props.dragEnd);
 	}
 
 	render() {
